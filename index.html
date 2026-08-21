@@ -6,6 +6,7 @@
   <title>圖址雲端小工具</title>
   <meta name="description" content="一次將闖關遊戲圖片發布至 GitHub Pages，並備份到 Google Drive。">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="drag-drop.css">
 </head>
 <body>
   <header><a class="brand" href="#top"><b>圖</b>圖址雲端</a><span class="status">● GitHub 發布＋Google 雙重備份</span></header>
@@ -19,7 +20,7 @@
       <div class="path"><span>GitHub 自動路徑</span><code id="path">images/game-folder/</code></div>
       <hr>
       <div class="step"><i>02</i><div><h2>加入闖關圖片</h2><p>一次最多 20 張，單張上限 10 MB</p></div></div>
-      <label class="drop" for="images"><strong>↑</strong><b>選擇闖關圖片</b><span>支援 JPG、PNG、WebP、GIF</span></label>
+      <label class="drop" for="images"><strong>↑</strong><b>拖曳圖片到這裡</b><span>或點一下選擇檔案</span><small>支援 JPG、PNG、WebP、GIF</small></label>
       <input id="images" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple hidden>
       <div id="files" class="files"></div><p id="error" class="error" hidden></p>
       <button id="upload" class="primary">上傳並產生網址 <span>→</span></button>
