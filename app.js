@@ -8,6 +8,8 @@ input.addEventListener("change",()=>{addFiles(input.files);input.value=""});
 ["dragenter","dragover"].forEach(name=>drop.addEventListener(name,e=>{e.preventDefault();e.stopPropagation();drop.classList.add("dragging")}));
 ["dragleave","drop"].forEach(name=>drop.addEventListener(name,e=>{e.preventDefault();e.stopPropagation();drop.classList.remove("dragging")}));
 drop.addEventListener("drop",e=>addFiles(e.dataTransfer.files));
+document.addEventListener("dragover",e=>e.preventDefault());
+document.addEventListener("drop",e=>{if(!drop.contains(e.target))e.preventDefault()});
 function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function showError(message){error.textContent=message;error.hidden=false}
 upload.addEventListener("click",async()=>{if(!folder.value.trim())return showError("請先輸入雲端資料夾名稱。");if(!files.length)return showError("請至少加入一張圖片。");error.hidden=true;upload.disabled=true;upload.textContent="正在上傳…";const body=new FormData();body.append("folder",folder.value.trim());files.forEach(f=>body.append("images",f));try{const response=await fetch(API,{method:"POST",body,credentials:"include"});const type=response.headers.get("content-type")||"";if(!type.includes("application/json"))throw new Error("請先點上方連結登入安全上傳服務，登入後再回來上傳。");const data=await response.json();if(!response.ok||!data.images)throw new Error(data.error||"上傳失敗");uploaded=data.images;renderResults();files=[];input.value="";filesBox.innerHTML=""}catch(e){showError(e.message||"上傳失敗，請稍後再試。")}finally{upload.disabled=false;upload.innerHTML="上傳並產生網址 <span>→</span>"}});
