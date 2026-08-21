@@ -1,0 +1,23 @@
+.drop {
+  transition: border-color .2s, background .2s, box-shadow .2s, transform .2s;
+}
+
+.drop:hover,
+.drop.dragging {
+  border-color: var(--green);
+  background: #f0f8f2;
+  box-shadow: 0 0 0 4px #e2f0e6;
+  transform: translateY(-1px);
+}
+
+.drop span {
+  margin-top: 5px;
+  color: #63736a;
+  font-size: 13px;
+}
+
+.drop small {
+  margin-top: 18px;
+  color: #8a958e;
+  font-size: 11px;
+}
