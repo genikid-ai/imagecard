@@ -25,6 +25,11 @@
   font-weight: 700;
 }
 
+.notice.failed { background: #fff0ee; }
+.notice.failed b { color: #a23e32; }
+.notice.success { background: #e8f5eb; }
+.notice.success b { color: #276c43; }
+
 @media (max-width: 640px) {
   .notice { align-items: flex-start; flex-direction: column; }
 }
