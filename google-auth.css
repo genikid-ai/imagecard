@@ -1,0 +1,30 @@
+.notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.notice > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.notice span {
+  color: #657789;
+  font-size: 11px;
+}
+
+.notice button {
+  border: 1px solid #b7c7d8;
+  border-radius: 7px;
+  background: white;
+  color: #38566f;
+  padding: 7px 11px;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .notice { align-items: flex-start; flex-direction: column; }
+}
