@@ -15,6 +15,7 @@
     <section class="hero"><small>GAME ASSET CLOUD</small><h1>一次上傳，<em>發布與備份都完成。</em></h1><p>GitHub Pages 提供遊戲圖片網址，Google Drive 同步保存原始圖片。</p></section>
     <section class="card">
       <div class="notice" id="login-box"><div><b id="login-status">請先登入 Google</b><span id="login-help">登入後才能上傳圖片</span></div><div id="google-signin"></div><button id="google-signout" hidden>登出</button></div>
+      <div id="tool-content" hidden>
       <div class="step"><i>01</i><div><h2>設定 Google 備份資料夾</h2><p>將建立在「【闖關遊戲】圖址專區」裡</p></div></div>
       <label for="folder">新增的資料夾名稱</label>
       <input id="folder" maxlength="80" placeholder="例如：森林關卡／第一章">
@@ -25,11 +26,12 @@
       <input id="images" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple hidden>
       <div id="files" class="files"></div><p id="error" class="error" hidden></p>
       <button id="upload" class="primary">上傳並產生網址 <span>→</span></button>
+      </div>
     </section>
     <section id="results" class="card results" hidden><div class="result-head"><div><h2>✓ 圖片同步完成</h2><p>以下網址可直接用在遊戲中</p></div><button id="copy-all">複製全部網址</button></div><div id="result-list"></div></section>
   </main>
   <footer>Google Drive 保留中文名稱　／　GitHub 自動產生英文安全路徑</footer>
   <script src="https://accounts.google.com/gsi/client" async></script>
-  <script src="app.js?v=5"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>
